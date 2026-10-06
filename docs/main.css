@@ -1,0 +1,250 @@
+header {
+  position: relative;
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  overflow: hidden;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.30);
+}
+
+h1
+{
+    position: relative;
+    z-index: 1;
+    color:#4A4038;
+    font-size: 50px;
+    font-family: "DM Serif Display", "Georgia", Times, serif;
+    text-align: center;
+    margin: 0;
+    padding: 18px 32px;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.28);
+    border-radius: 14px;
+    box-shadow: 0 4px 20px rgba(88, 79, 112, 0.12);
+}
+
+body
+{
+    background-color: white;
+    font-size: 17px;
+    text-align: center;
+}
+
+li
+{
+    text-align: left;
+}
+
+p {
+    color:#4A4038;
+    font-size: 17px;
+    text-align: left;
+}
+
+.home-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px 10px;
+}
+
+.welcome-message {
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 25px 0 10px;
+}
+/*Navigation Bar*/
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #A8B5A2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", "Arial", sans-serif;
+  letter-spacing: 1px;
+  color: #4A4038;
+  font-size: 20px;
+}
+
+li.navbar {
+  float: none;
+}
+
+li.navbar a {
+  display: block;
+  color: #09142e;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li.navbar a:hover {
+  color: #4A4038;
+  background-color: #C8BBAA;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #C8BBAA;
+  padding-bottom: 10px;
+}
+
+.tab {
+  padding: 12px 24px; 
+  font-family: "Monserrat", "Arial", sans-serif;
+  margin: 0 5px 10px;
+  background: none;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #09142e;
+}
+
+.tab:hover {
+  background-color: #C8BBAA;
+  color: #09142e;
+}
+
+.tab.active {
+  background-color: #C8BBAA;
+  color: black;
+}
+
+/*Gallery*/
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.gallery-item {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto; /* Preserve full image without cropping */
+  object-fit: contain;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.item-info {
+  padding: 15px;
+  font-family: "Montserrat", "Arial", sans-serif;
+  text-align: center;
+  background-color: white;
+  
+}
+
+.item-info h3 {
+  font-size: 1.2rem;
+  font-family: "Montserrat", "Arial", sans-serif;
+  text-align: center;
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px;
+  color: #C8BBAA;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  color: #C8BBAA;
+  border-top: 1px solid #e1e4e8;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .tab {
+    padding: 10px 16px;
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-size: 0.9rem;
+  }
+}
+
+/* Back to Top button */
+#backToTop {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  background: #A8B5A2;
+  color: #09142e;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-size: 20px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+#backToTop.show {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+#backToTop:hover {
+  transform: scale(1.05);
+}
